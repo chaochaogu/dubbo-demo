@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--此配置必须的，不配置会报错，该配置是计算服务依赖关系的，name建议配置成项目名称-->
+    <dubbo:application name="dubbo-consumer">
+        <dubbo:parameter key="qos.enable" value="true"/>
+        <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
+        <dubbo:parameter key="qos.port" value="33333"/>
+    </dubbo:application>
+    <!--从该注册中心寻找服务-->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+    <!--dubbo引用远程服务，底层是tcp长连接，端口默认是20880，直接连接调用-->
+    <dubbo:reference id="userService" interface="com.chaochaogu.service.UserService" check="false"/>
+
+</beans>
