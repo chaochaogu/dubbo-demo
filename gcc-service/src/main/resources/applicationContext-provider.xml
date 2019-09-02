@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--spring 和 dubbo 整合在一起（而且他们天然就整合在一起的，基于spring schema文件扩展）-->
+
+    <!--此配置必须的，不配置会报错，该配置是计算服务依赖关系的，name建议配置成项目名称-->
+    <dubbo:application name="gcc-service"/>
+
+    <!--配置zookeeper注册中心-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+
+    <!--dubbo暴露服务，让其他服务可以来调用-->
+    <dubbo:service interface="com.chaochaogu.service.UserService" ref="userService"/>
+
+</beans>
