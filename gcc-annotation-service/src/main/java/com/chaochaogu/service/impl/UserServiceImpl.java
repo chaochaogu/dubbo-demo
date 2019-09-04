@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
  * @date 2019/9/3
  */
 @Service("userService")
+@org.apache.dubbo.config.annotation.Service
 public class UserServiceImpl implements UserService {
 
     @Autowired

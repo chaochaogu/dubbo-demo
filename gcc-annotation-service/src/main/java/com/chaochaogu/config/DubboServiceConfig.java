@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -23,6 +24,7 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = "com.chaochaogu.service")
 @MapperScan(basePackages = "com.chaochaogu.mapper")
 @EnableDubbo(scanBasePackages = "com.chaochaogu.service")
+@EnableTransactionManagement
 public class DubboServiceConfig {
 
     @Value("${jdbc.username}")
