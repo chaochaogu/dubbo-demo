@@ -9,4 +9,6 @@ import com.chaochaogu.model.User;
 public interface UserService {
 
     User getUserById(Integer id);
+
+    int updateById(Integer id);
 }

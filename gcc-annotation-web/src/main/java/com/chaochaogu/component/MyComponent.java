@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class MyComponent {
 
     // 引用远程dubbo服务
-    @Reference
+    @Reference(timeout = 12000, retries = 3, loadbalance = "roundrobin")
     private UserService userService;
 
     public User test(Integer id) {
