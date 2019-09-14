@@ -13,6 +13,7 @@
     <dubbo:application name="dubbo-provider"/>
     <!--配置注册中心-->
     <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+
     <!--spring ioc 容器中的一个bean-->
     <bean id="userService" class="com.chaochaogu.service.impl.UserServiceImpl"/>
     <!--dubbo暴露服务，供其它服务调用-->

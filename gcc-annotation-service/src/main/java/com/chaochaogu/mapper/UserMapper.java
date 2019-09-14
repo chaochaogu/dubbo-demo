@@ -3,6 +3,7 @@ package com.chaochaogu.mapper;
 import com.chaochaogu.model.User;
 
 public interface UserMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

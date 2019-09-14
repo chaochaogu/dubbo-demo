@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    // dubbo框架生成的一个代理对象
     @Autowired
     private UserService userService;
 

@@ -4,6 +4,9 @@
     <title>Spring MVC源码分析</title>
   </head>
   <body>
-  ${userInfo.id} -- ${userInfo.name}
+  ${user.id} -- ${user.name}
+  <p>
+    <img src="${pageContext.request.contextPath}/image/beijing.jpg">
+  </p>
   </body>
 </html>

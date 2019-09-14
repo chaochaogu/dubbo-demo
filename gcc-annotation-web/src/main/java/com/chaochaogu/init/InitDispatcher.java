@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 /**
+ * 配置初始化spring mvc的dispatcherServlet
+ *
  * @author chaochao gu
  * @date 2019/9/6
  */
@@ -17,6 +19,7 @@ public class InitDispatcher implements WebApplicationInitializer {
     @Override
     public void onStartup(javax.servlet.ServletContext servletContext) throws ServletException {
 
+        // spring 容器
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.register(DubboWebConfig.class);
         context.setServletContext(servletContext);

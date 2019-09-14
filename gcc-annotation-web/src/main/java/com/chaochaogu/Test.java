@@ -14,8 +14,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(DubboWebConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(DubboWebConfig.class);
         MyComponent myComponent = context.getBean(MyComponent.class);
         User user = myComponent.test(1);
         System.out.println(user);

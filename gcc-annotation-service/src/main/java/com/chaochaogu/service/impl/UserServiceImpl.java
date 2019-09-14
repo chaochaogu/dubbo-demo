@@ -15,8 +15,11 @@ import java.io.FileNotFoundException;
  * @author chaochao Gu
  * @date 2019/9/3
  */
-@Service("userService")
-@org.apache.dubbo.config.annotation.Service
+@Service("userService") // spring的bean
+@org.apache.dubbo.config.annotation.Service(
+        timeout = 1000,
+        retries = 3,
+        loadbalance = "roundrobin")// <dubbo:service>标签暴露服务
 public class UserServiceImpl implements UserService {
 
     @Autowired

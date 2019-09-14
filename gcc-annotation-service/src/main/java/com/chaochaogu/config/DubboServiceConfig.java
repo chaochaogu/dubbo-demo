@@ -19,12 +19,12 @@ import javax.sql.DataSource;
  * @author chaochao Gu
  * @date 2019/9/3
  */
-@Configuration
-@PropertySource({"classpath:jdbc.properties", "classpath:gcc-service.properties"})
-@ComponentScan(basePackages = "com.chaochaogu.service")
-@MapperScan(basePackages = "com.chaochaogu.mapper")
-@EnableDubbo(scanBasePackages = "com.chaochaogu.service")
-@EnableTransactionManagement
+@Configuration // == xml
+@PropertySource({"classpath:jdbc.properties", "classpath:gcc-service.properties"}) // 读取jdbc.properties配置文件
+@ComponentScan(basePackages = "com.chaochaogu.service") // 扫描spring的service注解
+@MapperScan(basePackages = "com.chaochaogu.mapper") // 扫描Mapper接口-->MapperFacrotyBean
+@EnableDubbo(scanBasePackages = "com.chaochaogu.service") // 扫描dubbo的service注解
+@EnableTransactionManagement // 相当于原来spring.xml中的 <tx:annotation-driven transaction-manager="transactionManager"/>
 public class DubboServiceConfig {
 
     @Value("${jdbc.username}")

@@ -79,6 +79,25 @@
             </exclusions>
         </dependency>
 
+        <!-- javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- hessian -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.62</version>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <finalName>gcc-web</finalName>
+    </build>
 
 </project>
